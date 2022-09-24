@@ -21,18 +21,17 @@ void farmerData(string vegetable)
 
     for (int i = 0; i < t; i++)
     {
-        srand(time(0));
         int price = (rand() % 50) + 20;
-        int x = (rand() % 25);
-        int y = (rand() % 25);
+        int x = (rand() % 25) + 1;
+        int y = (rand() % 25) + 1;
         string password = firstName[x] + lastName[y] + to_string(location[i]);
         farmerRegisters[i] = new FarmerRegister(firstName[x], lastName[y], firstName[x] + lastName[y] + "@gmail.com", password, to_string(location[i]), 983546732 + i % 7, vegetables[i]);
         cout << endl;
-        cout << "LastName: " << farmerRegisters[i]->getUserFirstName() << endl;
+        cout << "FirstName: " << farmerRegisters[i]->getUserFirstName() << endl;
+        cout << "LastName: " << farmerRegisters[i]->getUserLastName() << endl;
         cout << "Location: " << farmerRegisters[i]->getUserLocation() << endl;
-        cout << "Phone Number: " << 983546732 + (2*i+3) % 7 << endl;
+        cout << "Phone Number: " << 983546732 + (2 * i + 3) % 7 << endl;
         cout << "Email: " << farmerRegisters[i]->getUserEmail() << endl;
-        cout << "FirstName: " << farmerRegisters[i]->getUserLastName() << endl;
         cout << "vegetable: " << vegetable << endl;
         cout << "Price: " << price + (i * 10) % 7 << "per Kg" << endl;
     }
